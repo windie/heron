@@ -2,10 +2,10 @@ setup:
 	scripts/setup.sh
 
 clean:
-	rm -rf public/* static/*
+	rm -rf public/*
 
 serve:
-	@hugo server --watch --ignoreCache
+	@hugo server --watch
 
 develop-static-assets:
 	@npm run develop
