@@ -289,7 +289,7 @@ def discover_tool_default(program, msg, envvar, defvalue):
 
 def export_env_to_file(out_file, env):
   if env in os.environ:
-    out_file.write('export %s=%s\n' % (env, os.environ[env]))
+    out_file.write("export %s='%s'\n" % (env, os.environ[env]))
 
 ######################################################################
 # Generate the shell script that recreates the environment
@@ -314,7 +314,7 @@ def write_env_exec_file(platform, environ):
     export_env_to_file(out_file, env)
 
   if 'CMAKE' in os.environ:
-    out_file.write('export PATH=' + os.path.dirname(os.environ['CMAKE']) + ':$PATH\n')
+    out_file.write("export PATH='" + os.path.dirname(os.environ['CMAKE']) + "':$PATH\n")
 
   # Invoke the programs
   out_file.write('# Execute the input programs\n')
