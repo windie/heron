@@ -25,7 +25,7 @@ import org.apache.storm.windowing.TupleWindow;
 import java.util.Map;
 
 /**
- * A bolt abstraction for supporting time and count based sliding & tumbling windows.
+ * A bolt abstraction for supporting time and count based sliding &lt; tumbling windows.
  */
 public interface IWindowedBolt extends IComponent {
   /**
