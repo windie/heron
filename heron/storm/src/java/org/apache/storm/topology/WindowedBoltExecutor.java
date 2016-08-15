@@ -54,6 +54,7 @@ import static org.apache.storm.topology.base.BaseWindowedBolt.Duration;
  * An {@link IWindowedBolt} wrapper that does the windowing of tuples.
  */
 public class WindowedBoltExecutor implements IRichBolt {
+  private static final long serialVersionUID = 8110332014773492905L;
   private static final Logger LOG = Logger.getLogger(WindowedBoltExecutor.class.getName());
   private static final int DEFAULT_WATERMARK_EVENT_INTERVAL_MS = 1000; // 1s
   private static final int DEFAULT_MAX_LAG_MS = 0; // no lag

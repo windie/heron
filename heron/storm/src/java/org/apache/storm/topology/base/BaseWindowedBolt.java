@@ -30,6 +30,8 @@ import org.apache.storm.task.TopologyContext;
 
 public abstract class BaseWindowedBolt implements IWindowedBolt {
 
+  private static final long serialVersionUID = 1603573203346490793L;
+
   protected final transient Map<String, Object> windowConfiguration;
 
   /**
