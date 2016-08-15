@@ -72,6 +72,7 @@ public class WindowedBoltExecutor implements IRichBolt {
     this.bolt = bolt;
   }
 
+  @SuppressWarnings("rawtypes")
   private int getTopologyTimeoutMillis(Map stormConf) {
     if (stormConf.get(Config.TOPOLOGY_ENABLE_MESSAGE_TIMEOUTS) != null) {
       boolean timeOutsEnabled = (boolean) stormConf.get(Config.TOPOLOGY_ENABLE_MESSAGE_TIMEOUTS);
@@ -86,6 +87,7 @@ public class WindowedBoltExecutor implements IRichBolt {
     return timeout * 1000;
   }
 
+  @SuppressWarnings("rawtypes")
   private int getMaxSpoutPending(Map stormConf) {
     int maxPending = Integer.MAX_VALUE;
     if (stormConf.get(Config.TOPOLOGY_MAX_SPOUT_PENDING) != null) {
@@ -110,6 +112,7 @@ public class WindowedBoltExecutor implements IRichBolt {
     }
   }
 
+  @SuppressWarnings("rawtypes")
   private void validate(Map stormConf, Count windowLengthCount, Duration windowLengthDuration,
                         Count slidingIntervalCount, Duration slidingIntervalDuration) {
 
@@ -136,6 +139,7 @@ public class WindowedBoltExecutor implements IRichBolt {
     }
   }
 
+  @SuppressWarnings("rawtypes")
   private WindowManager<Tuple> initWindowManager(WindowLifecycleListener<Tuple> lifecycleListener, Map stormConf,
                                                  TopologyContext context) {
     WindowManager<Tuple> manager = new WindowManager<>(lifecycleListener);
@@ -249,6 +253,7 @@ public class WindowedBoltExecutor implements IRichBolt {
   }
 
   @Override
+  @SuppressWarnings("rawtypes")
   public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
     this.windowedOutputCollector = new WindowedOutputCollector(collector);
     bolt.prepare(stormConf, context, windowedOutputCollector);

@@ -211,6 +211,7 @@ public abstract class BaseWindowedBolt implements IWindowedBolt {
   }
 
   @Override
+  @SuppressWarnings("rawtypes")
   public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
     // NOOP
   }
